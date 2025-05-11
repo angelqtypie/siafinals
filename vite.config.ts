@@ -10,6 +10,8 @@ export default defineConfig({
     react(),
     legacy()
   ],
+  
+  base:"siafinals",
   test: {
     globals: true,
     environment: 'jsdom',

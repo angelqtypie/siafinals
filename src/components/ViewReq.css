@@ -1,0 +1,83 @@
+/* ManageRequests.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+  }
+  
+  ion-header {
+    background: linear-gradient(135deg, #1f4e79, #ff6f20);
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f4f4f4;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .status-approved {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .status-declined {
+    color: red;
+    font-weight: bold;
+  }
+  
+  .status-pending {
+    color: orange;
+    font-weight: bold;
+  }
+  
+  .ion-button {
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  .ion-button.success {
+    background-color: #28a745;
+  }
+  
+  .ion-button.success:hover {
+    background-color: #218838;
+  }
+  
+  .ion-button.danger {
+    background-color: #dc3545;
+  }
+  
+  .ion-button.danger:hover {
+    background-color: #c82333;
+  }
+  
+  .success-message {
+    color: #28a745;
+    font-weight: bold;
+  }
+  

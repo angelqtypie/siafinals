@@ -3,6 +3,7 @@ import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 
+
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
 
@@ -32,6 +33,12 @@ import '@ionic/react/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import AddProducts from './pages/admin/AddProducts';
+import AdminLogin from './pages/admin/AdminLogin';
+import ManageUsers from './pages/admin/ManageUsers';
+import ViewFeedbacks from './pages/admin/ViewFeedbacks';
+import ViewRequests from './pages/admin/ViewRequests';
+import AdminDashboard from './pages/admin/AdminDashboard';
 
 setupIonicReact();
 
@@ -39,11 +46,24 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
-        <Route exact path="/home">
+        <Route exact path="/siafinals/adminlogin">
+          <AdminLogin /></Route>
+        <Route exact path="/siafinals/addproducts">
+          <AddProducts /></Route>
+        <Route exact path="/siafinals/manageusers">
+          <ManageUsers /></Route>
+        <Route exact path="/siafinals/viewfeedbacks">
+          <ViewFeedbacks /></Route>
+        <Route exact path="/siafinals/viewrequests">
+          <ViewRequests /></Route>
+        <Route exact path="/siafinals/admindashboard">
+          <AdminDashboard /></Route>          
+        <Route exact path="/siafinals/home">
           <Home />
+
         </Route>
-        <Route exact path="/">
-          <Redirect to="/home" />
+        <Route exact path="/siafinals/">
+          <Redirect to="/siafinals/home" />
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>

@@ -1,0 +1,21 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+  }
+  
+  th, td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .success-message {
+    background-color: #28a745;
+    color: white;
+    padding: 12px;
+    margin-bottom: 16px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  

@@ -1,0 +1,93 @@
+/* General layout */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Navbar links alignment */
+.nav-links ion-button {
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+/* Hero Section styling */
+.hero-section {
+    text-align: center;
+    background: linear-gradient(135deg, #1f4e79, #ff6f20);
+    color: #fff;
+    padding: 80px 20px;
+    border-bottom: 6px solid #ff6f20;
+    overflow: hidden;
+    flex: 1; /* Ensures it takes up remaining space */
+}
+
+/* Hero title */
+.hero-title {
+    font-size: 60px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+/* Hero subtitle */
+.hero-subtitle {
+    font-size: 24px;
+    margin-top: 16px;
+    font-weight: 300;
+}
+
+/* Hero text */
+.hero-text {
+    font-size: 20px;
+    margin-top: 20px;
+    font-weight: 400;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 50px; /* Space for footer */
+}
+
+/* Button group spacing */
+.button-group {
+    margin: 30px 20px;
+}
+
+.button-group ion-button {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Modal content styling */
+.modal-content {
+    padding: 20px;
+}
+
+.submit-button {
+    margin: 30px 20px 0;
+}
+
+/* Footer */
+footer, .ion-footer {
+    background-color: #2a2a2a;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+}
+
+/* Full Page Layout */
+.ion-page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full screen height */
+}
+
+/* Footer text */
+.ion-text-center {
+    font-size: 14px;
+    color: #ccc;
+    text-align: center;
+}
