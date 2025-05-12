@@ -39,6 +39,13 @@ import ManageUsers from './pages/admin/ManageUsers';
 import ViewFeedbacks from './pages/admin/ViewFeedbacks';
 import ViewRequests from './pages/admin/ViewRequests';
 import AdminDashboard from './pages/admin/AdminDashboard';
+import Login from './pages/users/login';
+import Dashboard from './pages/users/Dashboard';
+import Signup from './pages/users/Signup';
+import ThankYou from './pages/users/Thankyou';
+import ProfileUpdate from './pages/users/Userinfo';
+import SendFeedback from './pages/users/Sendfeedbacks';
+import CreateRequest from './pages/users/CreateRequest';
 
 setupIonicReact();
 
@@ -57,7 +64,23 @@ const App: React.FC = () => (
         <Route exact path="/siafinals/viewrequests">
           <ViewRequests /></Route>
         <Route exact path="/siafinals/admindashboard">
-          <AdminDashboard /></Route>          
+          <AdminDashboard /></Route>
+
+          
+          <Route exact path="/siafinals/login">
+          <Login /></Route>
+          <Route exact path="/siafinals/userinfo">
+          <ProfileUpdate /></Route>
+          <Route exact path="/siafinals/sendfeedbacks">
+          <SendFeedback /></Route>       
+            <Route exact path="/siafinals/createrequest">
+          <CreateRequest /></Route>                 
+          <Route exact path="/siafinals/thankyou">
+          <ThankYou /></Route>                    
+          <Route exact path="/siafinals/sign-up">
+          <Signup /></Route>
+          <Route exact path="/siafinals/dashboard">
+          <Dashboard /></Route>             
         <Route exact path="/siafinals/home">
           <Home />
 
