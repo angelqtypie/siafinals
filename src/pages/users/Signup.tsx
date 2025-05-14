@@ -94,7 +94,6 @@ const Signup: React.FC = () => {
           <IonLabel position="floating">Status</IonLabel>
           <IonSelect value={status} placeholder="Select Status" onIonChange={e => setStatus(e.detail.value)}>
             <IonSelectOption value="student">Student</IonSelectOption>
-            <IonSelectOption value="instructor">Instructor</IonSelectOption>
             <IonSelectOption value="staff">Staff</IonSelectOption>
           </IonSelect>
         </IonItem>
