@@ -79,15 +79,14 @@ const AdminDashboard: React.FC = () => {
             </IonCol>
           </IonRow>
         </IonGrid>
+        
+
       </IonContent>
-              <IonToolbar>
-                <IonText color={'dark'}>
-                  <p>© 2024 Northern Bukidnon State College. All Rights Reserved.</p>
-                </IonText>
-              </IonToolbar>
-            </IonFooter>
+      
     </IonPage>
+    
   );
+  
 };
 
 export default AdminDashboard;
