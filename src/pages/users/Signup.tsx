@@ -1,4 +1,4 @@
-import { IonContent, IonPage, IonItem, IonLabel, IonInput, IonRouterLink, IonButton, IonSelect, IonSelectOption, IonText, IonTitle, IonToolbar, IonHeader } from '@ionic/react';
+import { IonContent, IonPage, IonItem,IonFooter, IonLabel, IonInput, IonRouterLink, IonButton, IonSelect, IonSelectOption, IonText, IonTitle, IonToolbar, IonHeader } from '@ionic/react';
 import { useState } from 'react';
 import { supabase } from '../../utils/supabaseClient';
 import { useHistory } from 'react-router-dom';
@@ -51,13 +51,14 @@ const Signup: React.FC = () => {
     // Insert the extra user data into your 'users' table
     const { error: insertError } = await supabase.from('users').insert([
       {
-        id: user_id,
+        id: user_id,  // Make sure the id column in your table is UUID
         full_name: fullName,
         email: email,
         course: course,
         cellphone_number: cellphoneNumber,
         gender: gender,
-        status: status
+        status: status,
+        password: password
       }
     ]);
 
@@ -72,8 +73,8 @@ const Signup: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar color="primary">
-          <IonTitle>Sign Up</IonTitle>
+        <IonToolbar color="secondary">
+          <IonTitle >Sign Up</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
@@ -90,9 +91,24 @@ const Signup: React.FC = () => {
         </IonItem>
 
         <IonItem>
-          <IonLabel position="floating">Course</IonLabel>
-          <IonInput value={course} onIonChange={e => setCourse(e.detail.value!)} />
+          <IonLabel position="floating">Status</IonLabel>
+          <IonSelect value={status} placeholder="Select Status" onIonChange={e => setStatus(e.detail.value)}>
+            <IonSelectOption value="student">Student</IonSelectOption>
+            <IonSelectOption value="instructor">Instructor</IonSelectOption>
+            <IonSelectOption value="staff">Staff</IonSelectOption>
+          </IonSelect>
         </IonItem>
+
+        {status === 'student' && (
+          <IonItem>
+            <IonLabel position="floating">Course</IonLabel>
+            <IonSelect value={course} placeholder="Select Course" onIonChange={e => setCourse(e.detail.value)}>
+              <IonSelectOption value="ICS">ICS</IonSelectOption>
+              <IonSelectOption value="ITE">ITE</IonSelectOption>
+              <IonSelectOption value="IBM">IBM</IonSelectOption>
+            </IonSelect>
+          </IonItem>
+        )}
 
         <IonItem>
           <IonLabel position="floating">Cellphone Number</IonLabel>
@@ -109,11 +125,6 @@ const Signup: React.FC = () => {
         </IonItem>
 
         <IonItem>
-          <IonLabel position="floating">Status</IonLabel>
-          <IonInput value={status} onIonChange={e => setStatus(e.detail.value!)} />
-        </IonItem>
-
-        <IonItem>
           <IonLabel position="floating">Password</IonLabel>
           <IonInput value={password} type="password" onIonChange={e => setPassword(e.detail.value!)} />
         </IonItem>
@@ -123,19 +134,26 @@ const Signup: React.FC = () => {
           <IonInput value={confirmPassword} type="password" onIonChange={e => setConfirmPassword(e.detail.value!)} />
         </IonItem>
 
-<IonButton expand="block" onClick={handleSignup} className="ion-margin-top">
-  Sign Up
-</IonButton>
+        <IonButton expand="block" onClick={handleSignup} className="ion-margin-top">
+          Sign Up
+        </IonButton>
 
-<IonText className="ion-text-center ion-margin-top">
-  <p>
-    Already have an account? <IonRouterLink routerLink="/siafinals/login">Login here</IonRouterLink>.
-  </p>
-  <p>
-    Or would you like to go <IonRouterLink routerLink="/siafinals/home">back</IonRouterLink>.
-  </p>
-</IonText>
+        <IonText className="ion-text-center ion-margin-top">
+          <p>
+            Already have an account? <IonRouterLink routerLink="/siafinals/login">Login here</IonRouterLink>.
+          </p>
+          <p>
+            Or would you like to go <IonRouterLink routerLink="/siafinals/home">back</IonRouterLink>?
+          </p>
+        </IonText>
       </IonContent>
+            <IonFooter>
+        <IonToolbar>
+          <IonText color={'dark'}>
+            <p>© 2024 Northern Bukidnon State College. All Rights Reserved.</p>
+          </IonText>
+        </IonToolbar>
+      </IonFooter>
     </IonPage>
   );
 };

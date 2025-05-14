@@ -1,41 +1,57 @@
-/* ThankYou.css */
 .thank-you-content {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
-  background: #f0f2f5;
+  background: linear-gradient(to right, #284C73, #F36F21);
+  align-content: center;
+  align-items: center;
 }
 
 .card {
-  background: #fff;
+  background: #ffffff;
   padding: 40px 30px;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  max-width: 480px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  max-width: 380px;
   text-align: center;
+  animation: fadeInUp 0.5s ease;
+
 }
 
 .card h1 {
-  color: #28a745;
+  color: #2d4b88;
   font-size: 42px;
   margin-bottom: 20px;
 }
 
 .card p {
-  font-size: 20px;
-  color: #555;
+  font-size: 18px;
+  color: #333;
   margin-bottom: 30px;
+  line-height: 1.5;
 }
 
-ion-button {
+/* Custom button style using class instead of relying on color prop */
+.button {
   --background: linear-gradient(135deg, #6e7fbe, #2d4b88);
-  --border-radius: 10px;
+  --border-radius: 12px;
   --transition: all 0.3s ease;
   font-size: 18px;
 }
 
-ion-button:hover {
+.button:hover {
   --background: linear-gradient(135deg, #2d4b88, #6e7fbe);
   transform: scale(1.05);
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

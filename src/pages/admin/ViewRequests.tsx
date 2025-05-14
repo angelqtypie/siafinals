@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { supabase } from '../../utils/supabaseClient'; // Assuming you have supabaseClient configured
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonText } from '@ionic/react';
+import { IonPage, IonHeader, IonToolbar, IonTitle,IonFooter, IonContent, IonButton, IonText } from '@ionic/react';
 import { useHistory } from 'react-router-dom';
 import '../../components/ViewReq.css'; // Import the CSS for styling
 
@@ -120,6 +120,13 @@ const ViewRequests: React.FC = () => {
           </tbody>
         </table>
       </IonContent>
+            <IonFooter>
+        <IonToolbar>
+          <IonText color={'dark'}>
+            <p>© 2024 Northern Bukidnon State College. All Rights Reserved.</p>
+          </IonText>
+        </IonToolbar>
+      </IonFooter>
     </IonPage>
   );
 };

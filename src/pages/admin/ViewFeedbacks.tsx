@@ -1,10 +1,11 @@
 import {
     IonPage, IonHeader, IonToolbar, IonTitle, IonButtons, IonButton,
-    IonContent, IonList, IonItem, IonTextarea, IonText
+    IonContent, IonList, IonItem, IonTextarea, IonText, IonFooter,
   } from '@ionic/react';
   import { useEffect, useState } from 'react';
   import { supabase } from '../../utils/supabaseClient';
   import { useHistory } from 'react-router-dom';
+  import '../../components/Viewfeed.css';
   
   interface Feedback {
     id: number;
@@ -104,13 +105,12 @@ import {
     return (
       <IonPage>
         <IonHeader>
-          <IonToolbar color="primary">
+          <IonToolbar color="secondary">
             <IonTitle>View Feedbacks</IonTitle>
-            <IonButtons slot="start">
+            <IonButtons slot="end">
               <IonButton onClick={() => history.push('/siafinals/admindashboard')}>Home</IonButton>
             </IonButtons>
             <IonButtons slot="end">
-              <IonText className="ion-padding">{username}</IonText>
               <IonButton color="danger" onClick={handleLogout}>Logout</IonButton>
             </IonButtons>
           </IonToolbar>
@@ -118,45 +118,55 @@ import {
   
         <IonContent className="ion-padding">
           <h2>Recent Feedbacks</h2>
-          <IonList>
-            {feedbacks.map((feedback) => (
-              <IonItem key={feedback.id} lines="full">
-                <div style={{ width: '100%' }}>
-                  <h3>{feedback.users?.full_name || 'Unknown User'} (Rating: {feedback.rating})</h3>
-                  <p>{feedback.feedback}</p>
-                  <p><i>Submitted on: {new Date(feedback.created_at).toLocaleString()}</i></p>
-  
-                  <h4>Admin Replies:</h4>
-                  {replies[feedback.id]?.length ? (
-                    replies[feedback.id].map((reply, idx) => (
-                      <div key={idx} style={{ marginBottom: '10px', backgroundColor: '#f1f1f1', padding: '8px', borderRadius: '5px' }}>
-                        <strong>Admin:</strong>
-                        <p>{reply.reply}</p>
-                        <small>Replied on: {new Date(reply.created_at).toLocaleString()}</small>
-                      </div>
-                    ))
-                  ) : <p>No replies yet.</p>}
-<IonTextarea
-  placeholder="Type your reply here"
-  value={newReply[feedback.id] || ''}
-  onIonInput={(e) =>
-    setNewReply((prev) => ({ ...prev, [feedback.id]: e.detail.value || '' }))
-  }
-/>
+         <IonList>
+  {feedbacks.map((feedback) => (
+    <IonItem key={feedback.id} lines="full" className="feedback-item">
+      <div className="feedback-content">
+        <h3>{feedback.users?.full_name || 'Unknown User'} (Rating: {feedback.rating})</h3>
+        <p>{feedback.feedback}</p>
+        <p><i>Submitted on: {new Date(feedback.created_at).toLocaleString()}</i></p>
 
-                  <IonButton
-                    expand="block"
-                    color="success"
-                    onClick={() => handleReply(feedback.id)}
-                    disabled={!newReply[feedback.id]?.trim()}
-                  >
-                    Reply
-                  </IonButton>
-                </div>
-              </IonItem>
-            ))}
-          </IonList>
+        <h4>Admin Replies:</h4>
+        {replies[feedback.id]?.length ? (
+          replies[feedback.id].map((reply, idx) => (
+            <div key={idx} className="reply-container">
+              <strong>Admin:</strong>
+              <p>{reply.reply}</p>
+              <small>Replied on: {new Date(reply.created_at).toLocaleString()}</small>
+            </div>
+          ))
+        ) : <p>No replies yet.</p>}
+
+        <IonTextarea
+          placeholder="Type your reply here"
+          value={newReply[feedback.id] || ''}
+          onIonInput={(e) =>
+            setNewReply((prev) => ({ ...prev, [feedback.id]: e.detail.value || '' }))
+          }
+        />
+
+        <IonButton
+          expand="block"
+          color="success"
+          onClick={() => handleReply(feedback.id)}
+          disabled={!newReply[feedback.id]?.trim()}
+        >
+          Reply
+        </IonButton>
+      </div>
+    </IonItem>
+  ))}
+</IonList>
+
         </IonContent>
+
+              <IonFooter>
+        <IonToolbar>
+          <IonText color={'dark'}>
+            <p>© 2024 Northern Bukidnon State College. All Rights Reserved.</p>
+          </IonText>
+        </IonToolbar>
+      </IonFooter>
       </IonPage>
     );
   };

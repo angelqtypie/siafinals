@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '../../utils/supabaseClient'; // Your supabase client import
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonText, IonCard, IonCardHeader, IonCardContent, IonItem, IonLabel, IonList, IonListHeader, IonRow, IonCol, IonButtons, IonIcon } from '@ionic/react';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonFooter, IonContent, IonButton, IonText, IonCard, IonCardHeader, IonCardContent, IonItem, IonLabel, IonList, IonListHeader, IonRow, IonCol, IonButtons, IonIcon } from '@ionic/react';
 import { useHistory } from 'react-router-dom';
 import { mailOutline, addCircleOutline, chatbubbleEllipsesOutline, logOutOutline } from 'ionicons/icons';
+import '../../components/Dashboard.css'; // Make sure to link your custom CSS here
 
 const Dashboard: React.FC = () => {
     const [user, setUser] = useState<any>(null);
@@ -67,12 +68,12 @@ const Dashboard: React.FC = () => {
     return (
         <IonPage>
             <IonHeader>
-                <IonToolbar>
+                <IonToolbar color="secondary">
                     <IonTitle>Dashboard</IonTitle>
                     <IonButtons slot="end">
                         <IonButton onClick={() => history.push('/siafinals/email')}>
                             <IonIcon icon={mailOutline} slot="start" />
-                            Email
+                            Mail
                         </IonButton>
                         <IonButton onClick={() => history.push('/siafinals/createrequest')}>
                             <IonIcon icon={addCircleOutline} slot="start" />
@@ -91,7 +92,7 @@ const Dashboard: React.FC = () => {
             </IonHeader>
 
             <IonContent className="ion-padding">
-                <IonCard>
+                <IonCard className="welcome-card">
                     <IonCardHeader>
                         <IonTitle>Welcome to Your Dashboard!</IonTitle>
                     </IonCardHeader>
@@ -123,7 +124,7 @@ const Dashboard: React.FC = () => {
                 </IonCard>
 
                 {/* Requests Table */}
-                <IonCard className="ion-margin-top">
+                <IonCard className="ion-margin-top request-card">
                     <IonCardHeader>Your Requests</IonCardHeader>
                     <IonCardContent>
                         {requests.length > 0 ? (
@@ -147,7 +148,7 @@ const Dashboard: React.FC = () => {
                 </IonCard>
 
                 {/* Feedbacks Table */}
-                <IonCard className="ion-margin-top">
+                <IonCard className="ion-margin-top feedback-card">
                     <IonCardHeader>Your Feedbacks</IonCardHeader>
                     <IonCardContent>
                         {feedbacks.length > 0 ? (
@@ -179,7 +180,16 @@ const Dashboard: React.FC = () => {
                         )}
                     </IonCardContent>
                 </IonCard>
+  
+
             </IonContent>
+            <IonFooter>
+                    <IonToolbar>
+                      <IonText className="ion-text-center">
+                        <p>© 2024 Northern Bukidnon State College. All Rights Reserved.</p>
+                      </IonText>
+                    </IonToolbar>
+                  </IonFooter>
         </IonPage>
     );
 };

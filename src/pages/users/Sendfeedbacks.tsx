@@ -1,4 +1,4 @@
-import { IonContent, IonPage, IonHeader, IonToolbar, IonTitle, IonButton } from '@ionic/react';
+import { IonContent, IonPage, IonHeader, IonText, IonToolbar, IonFooter, IonTitle, IonButton } from '@ionic/react';
 import { useState } from 'react';
 import { supabase } from '../../utils/supabaseClient';
 
@@ -37,7 +37,7 @@ const SendFeedback: React.FC = () => {
     return (
         <IonPage>
             <IonHeader>
-                <IonToolbar color="primary">
+                <IonToolbar color="secondary">
                     <IonTitle>Send Feedback</IonTitle>
                     <IonButton slot="end" href="/siafinals/dashboard">Home</IonButton>
                     <IonButton slot="end" href="/siafinals/home">Logout</IonButton>
@@ -111,6 +111,13 @@ const SendFeedback: React.FC = () => {
                     </form>
                 </div>
             </IonContent>
+                  <IonFooter>
+                    <IonToolbar>
+                      <IonText color={'dark'}>
+                        <p>© 2024 Northern Bukidnon State College. All Rights Reserved.</p>
+                      </IonText>
+                    </IonToolbar>
+                  </IonFooter>
         </IonPage>
     );
 };

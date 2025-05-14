@@ -1,0 +1,81 @@
+/* General styling for the page */
+.ion-page {
+  font-family: 'Roboto', sans-serif;  /* Add a smooth, clean font */
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+h4 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #16a085;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+i {
+  font-size: 14px;
+  color: #888;
+}
+
+/* Styling for feedback and reply containers */
+.ion-item {
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #ecf0f1; /* Light background for the feedback item */
+  margin-bottom: 20px;
+}
+
+.reply-container {
+  margin-bottom: 15px;
+  background-color: #f9f9f9;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.reply-container strong {
+  color: #2c3e50;
+}
+
+.reply-container small {
+  font-size: 12px;
+  color: #7f8c8d;
+}
+
+/* Button styling */
+button {
+  font-size: 16px;
+  padding: 10px;
+}
+
+.ion-button {
+  margin-top: 10px;
+}
+
+/* Text area styling */
+ion-textarea {
+  margin-top: 15px;
+  border-radius: 5px;
+  background-color: #f4f4f4;
+}
+

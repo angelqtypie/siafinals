@@ -1,0 +1,98 @@
+/* Global page style */
+ion-content {
+  --background: #f9fafb;
+  padding: 1.5rem;
+}
+
+/* Section titles */
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 1.5rem 0 1rem;
+}
+
+/* Add product input styles */
+ion-input {
+  --background: #ffffff;
+  --padding-start: 12px;
+  --padding-end: 12px;
+  --border-radius: 8px;
+  --color: #1a202c;
+  --border-color: #cbd5e0;
+  font-size: 1rem;
+  margin: 0.75rem 0;
+}
+
+/* Text message (success/error) */
+ion-text p {
+  font-size: 0.95rem;
+  color: #2b6cb0;
+  margin-top: 1rem;
+}
+
+/* List styling */
+ion-list {
+  margin-top: 1.5rem;
+}
+
+/* Product item layout */
+ion-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Label containing name and price */
+ion-label {
+  flex: 1 1 100%;
+  font-size: 1rem;
+  color: #2d3748;
+}
+
+/* Product name */
+ion-label h3 {
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin: 0;
+  color: #1a202c;
+}
+
+/* Price text */
+ion-label p {
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+  color: #4a5568;
+}
+
+/* Inputs inside product list */
+ion-item ion-input {
+  width: 160px;
+  font-size: 0.95rem;
+}
+
+/* Buttons inside each product item */
+ion-item ion-button {
+  height: 36px;
+  font-size: 0.8rem;
+  padding: 0 16px;
+  --border-radius: 6px;
+}
+
+/* Modify button */
+ion-button[color="success"] {
+  --background: #38a169;
+  --background-hover: #2f855a;
+  color: #fff;
+}
+
+/* Delete button */
+ion-button[color="danger"] {
+  --background: #c53030;
+  --background-hover: #9b2c2c;
+  color: #fff;
+}

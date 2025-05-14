@@ -1,0 +1,99 @@
+/* General layout enhancements */
+.ion-padding {
+  padding: 1rem;
+  background-color: #f9fafb;
+}
+
+/* Card styling */
+.welcome-card, .request-card, .feedback-card {
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+}
+
+/* Welcome Card title */
+.welcome-card ion-title {
+  font-size: 1.4rem;
+  color: #333;
+}
+
+/* User details list styling */
+.welcome-card ion-item {
+  --background: #ffffff;
+  --border-color: #e0e0e0;
+}
+
+/* Requests and Feedback list item styling */
+.request-card ion-item, .feedback-card ion-item {
+  --background: #fdfdfd;
+  --border-color: #e0e0e0;
+  padding: 1rem 0.5rem;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+}
+
+/* Section headers inside cards */
+.request-card ion-card-header,
+.feedback-card ion-card-header {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+/* Paragraph and labels inside requests and feedbacks */
+.request-card p, 
+.feedback-card p, 
+.feedback-card small {
+  font-size: 0.95rem;
+  color: #4a5568;
+  margin: 0.2rem 0;
+}
+
+/* H3 Headings inside lists */
+.request-card h3, .feedback-card h3 {
+  margin: 0.4rem 0;
+  font-size: 1.05rem;
+  color: #1a202c;
+}
+
+/* Buttons in toolbar */
+ion-toolbar ion-button {
+  --background: #ffffff;
+  --color: #333333;
+  --border-radius: 20px;
+  --box-shadow: none;
+}
+
+ion-toolbar ion-button:hover {
+  --background: #edf2f7;
+}
+
+/* Footer styling */
+ion-footer {
+  --background: #f7fafc;
+  padding: 0.75rem 1rem;
+}
+
+ion-footer p {
+  font-size: 0.85rem;
+  color: #718096;
+  text-align: center;
+  margin: 0;
+}
+
+/* Text color in lists */
+ion-list ion-text {
+  color: #2d3748;
+}
+
+/* Replies section spacing */
+.feedback-card div {
+  margin-top: 0.5rem;
+}
+
+/* Loading text styling */
+.loading-message {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #718096;
+}

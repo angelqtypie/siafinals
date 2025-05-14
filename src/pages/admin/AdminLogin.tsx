@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { IonButton, IonContent, IonInput, IonPage, IonText } from '@ionic/react';
+import { IonButton, IonContent, IonInput, IonPage,IonRouterLink, IonText } from '@ionic/react';
 import { useHistory } from 'react-router-dom';
-import { supabase } from '../../utils/supabaseClient'; // Make sure to initialize Supabase in a separate file
+import { supabase } from '../../utils/supabaseClient';
+import '../../components/AdminLogin.css';
 
 const AdminLogin: React.FC = () => {
   const [username, setUsername] = useState('');
@@ -24,12 +25,18 @@ const AdminLogin: React.FC = () => {
         .eq('password', password)
         .single();
 
-      if (error) {
+      if (error || !data) {
         setError('Invalid Admin Username or Password!');
         return;
       }
 
-      // Store session data in localStorage (or use state management like Redux)
+      // Allow only 'chopper' to login
+      if (data.username.toLowerCase() !== 'chopper') {
+        setError('Access denied. Only Chopper is allowed to log in.');
+        return;
+      }
+
+      // Store session data
       localStorage.setItem('admin', data.username);
       localStorage.setItem('admin_id', data.id);
 
@@ -65,9 +72,15 @@ const AdminLogin: React.FC = () => {
             type="password"
             required
           />
-          
-          <IonButton expand="full" onClick={handleLogin}>Login</IonButton>
+
+          <IonButton expand="full" onClick={handleLogin}>
+            Login
+          </IonButton>
+                  <p>
+         Or would you like to go <IonRouterLink routerLink="/siafinals/home">back</IonRouterLink>?
+         </p>
         </div>
+
       </IonContent>
     </IonPage>
   );

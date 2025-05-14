@@ -7,6 +7,7 @@ import {
   IonContent,
   IonButton,
   IonText,
+  IonFooter,
   IonAlert,
   IonButtons,
 } from '@ionic/react';
@@ -70,13 +71,13 @@ const ManageUsers: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar color="primary">
+        <IonToolbar color="secondary">
           <IonTitle>Manage Users</IonTitle>
           <IonButtons slot="end">
-            <IonButton onClick={goToHome} color="light">
+            <IonButton onClick={goToHome} color="white">
               Home
             </IonButton>
-            <IonButton onClick={handleLogout} color="light">
+            <IonButton onClick={handleLogout} color="white">
               Logout
             </IonButton>
           </IonButtons>
@@ -152,6 +153,13 @@ const ManageUsers: React.FC = () => {
           onDidDismiss={() => setAlertOpen(false)}
         />
       </IonContent>
+            <IonFooter>
+        <IonToolbar>
+          <IonText color={'dark'}>
+            <p>© 2024 Northern Bukidnon State College. All Rights Reserved.</p>
+          </IonText>
+        </IonToolbar>
+      </IonFooter>
     </IonPage>
   );
 };
