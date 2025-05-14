@@ -22,7 +22,7 @@ const Home: React.FC = () => {
       <IonContent className="ion-padding">
         <div className="hero-section">
           <h1 className="hero-title">Simplifying Documents Request</h1>
-          <p className="hero-subtitle">for Students and Staffs</p>
+          <p className="hero-subtitle">for Students and Staffs in Registar</p>
           <p className="hero-text">
             At NBSC, we make the process of handling your requests fast, easy, and efficient.
             Your satisfaction is our priority, and we are here to help you at every step!
@@ -43,10 +43,3 @@ const Home: React.FC = () => {
 
 export default Home;
 
-      <IonFooter>
-        <IonToolbar>
-          <IonText color={'dark'}>
-            <p>© 2024 Northern Bukidnon State College. All Rights Reserved.</p>
-          </IonText>
-        </IonToolbar>
-      </IonFooter>
